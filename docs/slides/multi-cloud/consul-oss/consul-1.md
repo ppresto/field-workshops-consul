@@ -42,7 +42,19 @@ As our applications have shifted from monoliths to microservices, the networking
 ???
 Static to Dynamic Shift
 
-To understand we need to tell the story of what has happened to data center.
+We are moving away from the traditional DC [ clearly defined net, all ingress/egr -> fw] fw using IP address for identiy.
+
+As we transition into modern/dyn DC [ 3rd party net, dont know neighbor, no control on IP, IP often ephemeral]
+
+We're shifting away from the notion of a host. It used to be that this machine is a web server, this machine is an API server or a database. THis doesn't work in the cloud where IP's are dyn & short lived.  Now we think in terms of services.
+
+I don't really care what's running on that machine. I have hundreds of machines as part of my Nomad cluster. I don't really know what's running where. What I care about is routing the payment api service to the billing  service to the database service.
+
+Some of these services might not even exist until they get invoked. If I'm running on a Lambda endpoint, there is no host. Until the invocation happens, I don't even know an IP. 
+
+It's a different way of thinking, How do I route to a service as opposed to how do I route to a host?
+
+Lets take a quick look at the history of the DC to better understand
 
 ---
 name: Client-Server
