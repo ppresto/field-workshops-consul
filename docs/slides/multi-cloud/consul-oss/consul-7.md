@@ -143,10 +143,10 @@ class: compact
 Introduction to Gossip - Visualization
 -------------------------
 .center[![:scale 30%](images/gossip_100_node.png)]
-.center[100 nodes, ~4.19 gossip cycles] <br>
-
-For a 100 node clusters, this means roughly 4.19 cycles to reach all nodes. Pretty cool!
-Let's look at this for  a large cluster.
+.center[100 nodes,   ~4.19 gossip cycles]
+.center[1000 nodes,  ~6.28 gossip cycles]
+.center[10000 nodes, ~8.38 gossip cycles] <br>
+For a 10000 node cluster, this means roughly 8.38 cycles or ~2 seconds to reach all nodes. Pretty cool!
 
 ---
 name: Introduction-to-Gossip-Convergence

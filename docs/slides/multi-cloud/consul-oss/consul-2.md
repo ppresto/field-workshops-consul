@@ -29,11 +29,9 @@ Introduction to Consul - Overview
 * 100s - 10,000s of client nodes
 
 ???
-Within each datacenter, we have a mixture of clients and servers. 
+Within each datacenter we recommend three to five servers depending on your risk tolerance.
 
-It is expected that there be between three to five servers. 
-
-there is no limit to the number of clients, and they can easily scale into the tens of thousands
+No limit to the number of clients, and they can easily scale into the tens of thousands
 
 * client can run on k8s worker node and service all pods for efficiency.
 ---
@@ -57,8 +55,8 @@ This Gossip pool is used for a few purposes.
 3. Agent failure detection is shared by all members of the datacenter instead of being concentrated on just the consul servers.
 
 traditional healthchecking are 1/1 heartbeat checks. Doesn't scale.  
-* Gossip protocol uses Serf and scales logramithically
-* Open new window and show slide 75-76 for scalability
+* Gossip protocol uses Serf and scales logramithically (show scale)
+https://ppresto.github.io/field-workshops-consul/slides/multi-cloud/consul-oss/#75
 
 ---
 name: Introduction-to-Consul-Consensus
