@@ -16,6 +16,13 @@ Consul provides an API driven control plane, which integrates with proxies for t
 
 This allows critical functionality like naming, segmentation and authorization, and routing to be handled by proxies at the edge rather than using centralized middleware.
 
+???
+Consul Connect provides an API driven control plane.
+
+It uses proxies like Envoy for its data plane.  
+
+Consul in conjunction with Envoy allows critical functionality like identity, authorization, and routing to be handled by proxies at the edge rather than using centralized middleware.
+
 ---
 name: Segmentation-Intro-Security
 class: img-right compact
@@ -28,6 +35,9 @@ Consul enables fine grained service segmentation to secure service-to-service co
 Consul can be integrated with common centralized PKI and certificate management.
 
 Service configuration is achieved through API-driven Key/Value store that can be used to easily configure services at runtime in any environment.
+
+???
+Consul can integrate with common centralized PKI and certificate mgmt.
 
 ---
 name: Segmentation-Control-Plane
@@ -44,6 +54,9 @@ Consul is the control plane for the Connect service mesh:
 * Manages registered services and health checks for that node
 * Manages certificates and access policies and configures the proxy
 
+???
+Walk through diagram
+
 ---
 name: Segmentation-Data-Plane
 class: img-right compact
@@ -56,6 +69,9 @@ The Data Plane provides the ability to forward requests from the applications, i
 The Data Plane is in the critical path of data flow from one application to the other and hence the need for high throughput and low latency.
 
 The Consul Envoy integration is currently the primary way to utilize advanced layer 7 features provided by Consul, but can integrate with other third party proxies.
+
+???
+The consul envoy integration is currently the primary way to utilize advanced layer 7 features like circuit breaking, blue/green or canary deployments, a/b testing just to name a few.
 
 ---
 name: Segmentation-Identity
@@ -71,6 +87,8 @@ Consul provides each service with an identity encoded as a TLS certificate.
 * Standard TLS certificate with SPIFFE compatibility
 * Built-in certificate authority (CA) or integrated with 3rd party CA, such as Vault
 
+???
+TLS Certificate Identity Work Flow
 
 ---
 name: Segmentation-Access-Graph
@@ -87,6 +105,10 @@ Allows or denies service-to-service communication with Intentions
 * Manage with web UI, CLI, and API
 * Multi-datacenter support
 
+???
+Service Access Graph
+Multi datacenter support
+
 ---
 name: Segmentation-Access-Graph
 class: img-right compact
@@ -101,6 +123,11 @@ There are many ways you may wish to carve up a single datacenter's pool of servi
 * Canary testing
 * A/B tests
 * Blue/Green deploys
+
+???
+Advanced layer 7 routing
+Monolith phased migration to micro services
+
 ---
 name: Segmentation-Mesh-Gateways
 class: img-right compact
@@ -114,6 +141,8 @@ Mesh gateways enable routing of Connect traffic between different Consul datacen
 * Gateways operate by sniffing the SNI header out of the Connect session and then route the connection to the appropriate destination based on the server name requested.
 * The data within the Connect session is not decrypted by the Gateway.
 
+???
+Mesh Gateways act as layer 4 routers enabling service mesh traffic between different consul data centers.  They never decrypt the data.  The read the SNI header to route the data to the correct destination.
 
 ---
 name: Segmentation-Lab

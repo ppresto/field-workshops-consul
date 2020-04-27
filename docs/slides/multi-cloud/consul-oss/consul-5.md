@@ -54,6 +54,9 @@ Service Registry - API Interface
 .center[![:scale 45%](images/service_registry_api.png)]
 .center[API Catalog Request] <br>
 
+???
+API request can give a lot more data.  useful for natively integrated app.  can use tags, node, etc…
+
 ---
 name: Service-Registry-DNS
 Service Registry - DNS Interface
@@ -81,6 +84,12 @@ A common use case is managing load balancer configuration files that need to be 
 
 It is an ideal for replacing complicated API queries that often require custom formatting.
 
+???
+ex: 
+consul template renaders the template files as things change.
+
+ex: dynamically configure nginx with an address of a service in consul and reload it.
+
 ---
 name: Service-Registry-Integration-DNS
 class: img-right compact
@@ -94,6 +103,8 @@ Integrations - DNS
 * Round robin load balancing
 * Unhealthy instances are automatically filtered out
 
+???
+In our next lab we will use DNS Masq
 ---
 name: Service-Registry-Integration-Native
 class: img-right compact
@@ -106,6 +117,9 @@ By leveraging Consul’s RESTful HTTP API system, the community and vendors are 
 These integrations include SDKs, load balancers, proxies, API gateways, monitoring tools, and more.
 
 If your application is Consul aware, it can connect directly to the API!
+
+???
+write a latency sensitive application that can use consul api’s directly.   F5 AS3 is a good example.  F5 directly talks to consul API’s to pull latest information
 
 ---
 name: Service-Registry-Integration-Native

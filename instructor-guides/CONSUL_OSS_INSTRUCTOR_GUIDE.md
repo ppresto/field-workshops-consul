@@ -48,11 +48,17 @@ The slide deck for this training is published here:
 #### https://hashicorp.github.io/field-workshops-consul/oss
 
 #### Navigation
-Use the arrow keys (up/down or left/right) to navigate back and forth between slides.
+⬆ ⬇ ⬅ ➡ - Navigate back and forth between slides
 
 Press the `P` key to enter presenter mode and reveal the speaker notes.
 
 Press the `C` key to pop open an external window that will stay synced with your speaker notes window. This is useful for keeping notes on your laptop while showing the presentation on the projector.
+
+#### Test Fork/Clone Locally
+Test a local copy of the slide deck with this python one-liner:
+```
+python -m SimpleHTTPServer
+```
 
 #### RemarkJS
 The slide deck for this training is written completely in [Markdown](https://guides.github.com/features/mastering-markdown/) using the [RemarkJS](https://remarkjs.com/#1) framework. This allows us to publish slide decks from a source code repository. The slide deck is easy to maintain, lightweight, and can be accessed from anywhere. Updates and changes to the deck can be made quickly and efficiently by simply editing the markdown source files. If you find any mistakes or issues with the slides please add them to our issue tracker:

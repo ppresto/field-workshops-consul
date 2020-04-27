@@ -23,19 +23,29 @@ Follow along on your own computer at this link:
 ???
 These slides are published using the RemarkJS framework and Github Pages. View the source code for both the slide deck and the Instruqt labs here: https://www.github.com/hashicorp/field-workshops-consul. You may need to be invited to get access to this private code repo.
 
+## Make Custom Edits
+You can easily test a local copy of the slide deck with this python one-liner:
+python -m SimpleHTTPServer
+
 ---
 name: Introductions
 Introductions
 -------------------------
 
-.contents[
-* Your Name
-* Job Title
-* Automation Experience
-]
+.contents[ ]
+* Patrick Presto
+* Sr. Solutions Engineer
 
 ???
-Use this slide to introduce yourself, give a little bit of your background story, then go around the room and have all your participants introduce themselves.
+I've worn many hats within operations
+
+Linux Admin
+
+Java Application Support
+
+Developed deployment tools for weblogic, Jboss, tomcat, and .NET
+
+Since early in my career I've been bridging the gap between Engineering and Operations working together to speed up application delivery 
 
 ---
 name: Table-of-Contents
@@ -43,13 +53,13 @@ Table of Contents
 =========================
 
 1. Consul Overview
-1. Consul Architecture
-1. Consul Basics
+2. Consul Architecture
+3. Consul Basics
     * Lab - Meet Consul
-1. Consul Use Cases
-1. Service Discovery
+4. Consul Use Cases
+5. Service Discovery
     * Lab - Service Discovery with Consul
-1. Service Segmentation
+6. Service Segmentation
     * Lab - Service Mesh with Consul
     * Bonus Lab - Service Mesh with Consul on K8s
     * Bonus Lab - Service Mesh with Consul Mesh Gateways

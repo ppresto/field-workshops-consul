@@ -10,7 +10,11 @@ Consul Adoption Journey
 .center[![:scale 70%](images/use_cases.png)]
 
 ???
-As we start to dive into how to use consul it is important to think about how you would go about adopting this in your environments.  First and foremost adopting a standard way of service discovery across a single application of federation of applications is a critical first step.  Because of this we will begin with looking at consul's robust feature set around service discovery.
+As we start to dive into how to use consul it is important to think about how you would go about adopting this in your environments.  
+
+First and foremost adopting a standard way of service discovery across a single application of federation of applications is a critical first step.  
+
+Because of this we will begin with looking at consul's robust feature set around service discovery.
 
 ---
 name: Load-Balancers-Service-Discovery
@@ -27,7 +31,11 @@ Service Discovery and Load Balancers
    * Load grows as you scale
    * Requires health probes for every backend system
 ???
-The current mode of operation for handling service discovery is usually done with load balancers as seen her in the diagram.  When I want to provision a new service it gets deployed and then the network team is notified that they need to configure the virtual IPs on the load balancer to pick up the service and start routing traffic to it.  This is time consuming, error prone, and can typically have long lead times.  Consul can solve this problem.
+The current mode of operation for handling service discovery is usually done with load balancers 
+
+When I want to provision a new service it gets deployed and then the network team is notified that they need to configure the virtual IPs on the load balancer to pick up the service and start routing traffic to it.  This is time consuming, error prone, and can typically have long lead times.  
+
+Consul can solve this problem.
 
 ---
 name: Service-Discovery-with-Consul
@@ -40,7 +48,13 @@ Service Discovery with Consul
 * Services are able to query each other via DNS or HTTP
 
 ???
-In a consul environment services are able to self register along with their unique health check requirements.  This makes it easy to define and healthy service.  This coupled with consul using gossip service routing and availability is near real time.  This allows for service discovery to be offloaded from the network and load balancer teams to the application deployment pipeline.  This is a crucial first step esp if an organization wants to take advantage of the benefits of a service mesh.
+In a consul environment services are able to self register along with their unique health check requirements.  This makes it easy to define a healthy service.  
+
+This coupled with consul using gossip service routing and availability is near real time.  
+
+This allows for service discovery to be offloaded from the network and load balancer teams to the application deployment pipeline.  
+
+This is a crucial first step esp if an organization wants to take advantage of the benefits of a service mesh.
 
 
 ---
@@ -91,7 +105,11 @@ Secure Networking is Hard
 * Huge lists of firewall rules
 
 ???
+Now that service discovery is solved, our applications can find each other and now we need to secure them.  Once again the over burdened network team has to create ip based firewall rules.  These grow as applications grow.  Moving into microservices and short lived services these rules can become an exponential problem.  
 
+To work around this problem teams are opening up entire subnets, and large port ranges compromising their security profile in an attempt to keep up with demand and improve service to service stability. 
+
+Example: Process Workflow. App-cloud-network-security-network-cloud-app : 2-8 weeks
 
 ---
 name: Firewalls-Wont-Scale
@@ -103,7 +121,11 @@ Firewalls Won't Scale
 * Hard to optimize
 
 ???
-If you take this mindset to its logical conclusion you will end up with something like this.  Firewalls at every service trying to maintain all the up and downstream communications channels.  At scale this is completely unmanageable.
+If you take this mindset to its logical conclusion you will end up with something like this. 
+
+Firewalls at every service trying to maintain all the up and downstream communications channels. 
+
+At scale this is completely unmanageable.
 ---
 name: Consul-Service-Mesh
 Consul Connect - A Modern Service Mesh
@@ -163,4 +185,12 @@ Consul Mesh Gateways
 .center[Secure connections between any app or service across disparate environments]
 
 ???
-This problem is addressed with the availability of mesh gateways.  This allows a single point at the edge that all mesh traffic flows over.  This allows the network teams to control the ingress/egress points at the edge of the network while still allowing the app teams the flexibility to run application components on the platform of their choosing.  In the next lab we are going to explore the concepts of a service mesh in instruqt.
+This problem is addressed with the availability of mesh gateways.  
+
+This allows a single point at the edge that all mesh traffic flows over.  
+
+So the network teams can control the ingress/egress points at the edge of the network 
+
+while still allowing the app teams the flexibility to run application components on the platform of their choosing.  
+
+In the next lab we are going to explore the concepts of a service mesh in instruqt.
