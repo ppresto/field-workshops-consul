@@ -53,11 +53,11 @@ This Gossip pool is used for a few purposes.
 1. Allows clients to automatically discover servers. 
 2. Allows for reliable and fast event broadcasts.
 3. Agent failure detection is shared by all members of the datacenter instead of being concentrated on just the consul servers.
-
-traditional healthchecking are 1/1 heartbeat checks. Doesn't scale.  
-* Gossip protocol uses Serf and scales logramithically (show scale)
+4. Example: **Gossip**
+5. Traditional healthchecking are **1/1 heartbeat checks to monitors**. Doesn't scale.  
 https://ppresto.github.io/field-workshops-consul/slides/multi-cloud/consul-oss/#75
 
+* Gossip protocol uses Serf and scales logramithically (show scale)
 ---
 name: Introduction-to-Consul-Consensus
 class: img-right
@@ -76,7 +76,9 @@ How does the consul server cluster communicate with each other?
 
 This brings us to the Consensus protocol.
 
-The servers in each datacenter are all part of a single Raft peer set. This means that they work together to elect a single leader. 
+The servers in each datacenter are all part of a single Raft peer set. This means that they work together to elect a single leader.
+
+candidates - elect leader -  followerszxz **hy**
 
 The leader is responsible for processing all queries and transactions. 
 

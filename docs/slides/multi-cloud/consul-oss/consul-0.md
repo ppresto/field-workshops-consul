@@ -9,18 +9,12 @@ Connect and Secure Services across any platform.
 ???
 Welcome to our OSS Workshop for Consul.
 
-
 Before we get started lets address a couple house keeping issues.
-
-As Alli said...
-
-Mute your mic during the presentation
-We will go into smaller breakout rooms and encourage you to use your video & audio here
-
-Please Post Questions in Chat and our HC Engineers will be available to help.
-I'll be reviewing these between sessions as well.
-
-This content is suitable for a 3-4 hour workshop.
+* Mute your mic during the presentation
+* We will go into smaller breakout rooms and encourage you to use your video & audio here
+* Please Post Questions in Chat and our HC Engineers will be available to help.
+  * I'll be reviewing these between sessions as well.
+* This is a 3 hour workshop.
 
 ---
 name: Link-to-Slide-Deck
