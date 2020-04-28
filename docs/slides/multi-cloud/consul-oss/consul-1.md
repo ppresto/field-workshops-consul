@@ -198,7 +198,13 @@ Introduction of Multi-Cloud - K8s
 * Access to K8S service - K8S Ingress et al
 
 ???
-and throw in K8s and its even more confusing.  Maybe you have your SDN stuff on left maybe thats your openshift on some type of ingress solution, possibly some cloud container solution on right and in this world IP's are almost meaningless.  It just doesn't work and its where everyone is at today.
+and throw in K8s and its even more confusing.  
+
+Maybe you have your SDN stuff on left (openshift on some type of ingress solution)
+
+Maybe some cloud container solution on right
+
+In this world IP's are almost meaningless.  It just doesn't work and this is where many of us are at today.
 
 ---
 name: Introduction-Summary
@@ -211,12 +217,12 @@ Let's learn a little more about how Consul works, and then we can revisit these 
 ???
 Summary:
 
-Weve solved some issues with service discovery, but we are still trying to get to the end game.  How can we connect all these services together.
+Using Service Discovery we can solve some of the IP challenges.  Especially in our newer greenfield deployments. But How can we connect all our services together.
 
-We are very much : Crawl - Walk - Run
-Its a journey, we start out with service discovery.  70-80% of client workloads are related to things like getting F5 LB pool updates, or Nginx, HAProxy config updated.
+Adopting Consul is very much : Crawl - Walk - Run Story
+Initially 70% of client workloads are related to things like getting F5 LB pool updates, or Nginx, HAProxy config updated.
 
-Many new Greenfield deployments using cloud K8s services are using more advanced mesh capabilities.  Not being tied to a scheduler or orchestrator allow us to not be tied to that journey but the whole show.
+Many new Greenfield deployments using cloud K8s services are using more advanced discovery and mesh capabilities.  Consul Not being tied to a scheduler or orchestrator allow us to not be tied to just that platform but your whole env.
 
 ---
 name: Live-Demo
@@ -226,3 +232,13 @@ Live Demo
 
 ???
 Let's do a short demo to show you one of the use cases Consul can help you solve.
+* UI - Nodes (vm)
+* UI - Services 
+  * We have lots of services we are managing in xls like firewalls, lb, servers, etc…. can’t delete rule without lots of risk. as we move to micro services we need to find better ways to address this.  Here is the service tab , service catalog, discovery.
+* Show Error Website
+* Show Tabs (App Config - Wordpress website, dbaddress not working.  click on db service and find IP.  that could fix problem, but that isn’t discovery).
+* dig mysql.service.consul +short.  #get db IP with service dns name 
+* dig mysql.service.consul srv
+* dig production.service.consul 
+  * update wordpress with service name, save file, and show service discovery working!
+  * tags allow you to do things like separate env, dynamic routing.

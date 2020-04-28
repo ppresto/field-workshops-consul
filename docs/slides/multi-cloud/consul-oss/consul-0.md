@@ -44,14 +44,12 @@ Introductions
 * Sr. Solutions Engineer
 
 ???
-I've worn many hats within operations
+Many hats within operations   **Linux Admin  ,  Java Application Support**
 
-Linux Admin
-
-Java Application Support
-
-Developed deployment tools for weblogic, Jboss, tomcat, and .NET
-
+Built Deployment tools for weblogic, Jboss, tomcat, and .NET ()
+* Releases / Building new Apps with network / security 
+* Configuring webserver proxies and  HTTP Headers to route requests
+  
 Since early in my career I've been bridging the gap between Engineering and Operations working together to speed up application delivery 
 
 In my previous role I was the director of a global infrastructure team.
